@@ -1,0 +1,203 @@
+@font-face {
+  font-family: Quantico;
+  src: url(../assets/font/Quantico/Quantico-Regular.ttf);
+}
+@font-face {
+  font-family: Quantico-Bold;
+  src: url(../assets/font/Quantico/Quantico-Bold.ttf);
+}
+
+$primary-bg-clr:#272C3D;
+$page-bg-clr:#1B1E27;
+$seconday-bg-clr:#F5F5F5;
+$txt-clr:#BFBFBF;
+$white-clr:#fff;
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Quantico;
+}
+
+@mixin Flex {
+  display: flex;
+}
+
+@mixin flexBetween {
+  display: flex;
+  justify-content: space-between;
+}
+
+.navbar {
+  height: 78px;
+  background-color: $page-bg-clr;
+  .container-fluid {
+    padding: 0 30px;
+    .navbar-nav {
+       @include Flex;
+       gap: 20px;
+      .nav-link {
+        font-size: 24px;
+        color: $white-clr;
+        &:hover {
+          cursor: pointer;
+        }
+      }
+      .nav-item:nth-child(1) .nav-link {
+        color: #FF9C28;
+      }
+    }
+    .search {
+      .input-group {
+        .input {
+          width: 200px;
+          background-color: #404864;
+          border:transparent;
+          position: relative;
+  
+          &::placeholder {
+            color: $white-clr;
+          }
+        }
+        .bi-search {
+          color: grey;
+          position: absolute;
+          top: 5px;
+          right: 30px;
+        }
+      }
+      .select {
+        width: 240px;
+        border: transparent;
+        padding: 0 5px;
+        outline: none;
+        border-radius: 5px;
+        background: rgba(0, 0, 0, 0.5);
+        color: $white-clr;
+        &:hover {
+          outline: none;
+        }
+      }
+    }
+  }
+}
+.main-page {
+  height: 100vh;
+  background-color: #040404a5;
+  .csgo-bg {
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: end;
+    background: url(../assets/images/csgo-background.jpg);
+    background-size:100% 105%;
+    background-position: center center;
+
+    .player-num {
+      margin-bottom: 30px;
+      padding: 0 50px;
+
+      h4 {
+        font-size: 34px;
+        color: $white-clr;
+      }
+      p {
+        font-size: 20px;
+        color: $white-clr;
+        margin-left: -45px;
+      }
+    }
+  }
+  .updates {
+    height: 50%;
+    width: 80%;
+    margin: 0 auto;
+    text-align: center;
+    h1 {
+      margin-top: 25px;
+      font-size: 36px;
+    }
+    .carousel .carousel-indicators button {
+     width: 10px;
+     height: 10px;
+     margin: 0 8px;
+     border-radius: 100%;
+   }
+   .card {
+   border: none;
+   background-color: #000000;
+     .card-body {
+       img {
+         width: 100%;
+         height: 100%;
+       }
+     }
+   }
+  }
+  .wrapper {
+    width: 80%;
+    background-color: $page-bg-clr;
+    margin: 30px auto;
+    .champions {
+      .header {
+        padding: 30px 20px;
+
+        .date {
+          @include Flex;
+          span {
+            font-size: 20px;
+            color:#FF9C28;
+          }
+        }
+      }
+      .champion-wrapper {
+        @include Flex;
+        gap: 20px;
+        width: 100%;
+        .champion-img {
+          width: 50%;
+          margin-left: 28px;
+          img {
+            width: 100%;
+            height: 100%;
+          }
+        }
+        .champion-txt {
+          width: 40%;
+          margin-left: 10px;
+         
+          p {
+            letter-spacing: 1px;
+            line-height: 1.4;
+            font-size: 20px;
+            color: $txt-clr;
+          }
+        }
+      }
+    }
+    .btm-txt {
+      margin-left: 28px;
+      padding: 13px 0;
+      
+      p {
+        font-size: 18px;
+        color: $txt-clr;
+      }
+    }
+    .social-icons {
+      margin-left: 28px;
+      @include Flex;
+      border-bottom: 2px dashed $primary-bg-clr;
+      gap: 15px;
+       span {
+        font-size: 18px;
+       }
+      .facebook,.reddit {
+        @include Flex;
+        gap: 10px;
+        font-size: 18px;
+      }
+    }
+  }
+}
+
